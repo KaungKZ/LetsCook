@@ -516,6 +516,8 @@ body {
   #root .recipe-items .grid-items {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+    width: 100%;
+    justify-items: center;
   }
   #root .recipe-items .grid-items .item {
     max-width: 400px;
@@ -626,6 +628,8 @@ body {
   #root .recipe-items .grid-items {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+    width: 100%;
+    justify-items: center;
   }
   #root .recipe-items .grid-items .item {
     max-width: 450px;
