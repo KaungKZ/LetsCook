@@ -1,0 +1,659 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700|Poppins:400,700|Roboto:400,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  background: #fdfdfd;
+}
+
+:root .item {
+  max-width: 450px;
+  min-height: 600px;
+  margin-bottom: 3rem;
+  background: #fff;
+  -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem;
+  border-radius: 9px;
+  color: #353535;
+  position: relative;
+}
+
+:root .item .item-title {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #7cb3e5;
+}
+
+:root .item .item-main-title {
+  color: #353535;
+}
+
+:root .item .item-content {
+  font-family: "Roboto", sans-serif;
+}
+
+:root .item .instructions-content {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+:root .item .name,
+:root .item .cookTime,
+:root .item .instructions {
+  margin-bottom: 22px;
+}
+
+:root .item .instructions .item-content {
+  margin-top: 10px;
+}
+
+:root .item .name {
+  width: 80%;
+  margin: 0 auto 22px auto;
+  text-align: center;
+}
+
+:root .item .name span {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+}
+
+:root .item .ingredients .grid-ingredients {
+  margin-top: 10px;
+}
+
+:root .item .ingredients .grid-ingredients .ingredient {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  margin-top: 10px;
+  gap: 5px;
+}
+
+:root .item .buttons {
+  position: absolute;
+  top: 32px;
+  right: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+:root .item .buttons .delete-btn {
+  margin-bottom: 22px;
+  background: #ea4444;
+}
+
+:root .item .buttons .edit-btn {
+  background: #449aea;
+}
+
+:root .btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#root .recipe-header {
+  width: 60%;
+  height: 100px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 90px;
+}
+
+#root .recipe-header .title {
+  cursor: pointer;
+}
+
+#root .recipe-header .search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#root .recipe-header .search-bar input {
+  width: 70%;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background: rgba(124, 179, 229, 0.3);
+  padding: 0 1rem;
+  -webkit-transition: background 400ms;
+  transition: background 400ms;
+}
+
+#root .recipe-header .search-bar input::-webkit-input-placeholder {
+  color: #353535;
+  opacity: 0.6;
+}
+
+#root .recipe-header .search-bar input:-ms-input-placeholder {
+  color: #353535;
+  opacity: 0.6;
+}
+
+#root .recipe-header .search-bar input::-ms-input-placeholder {
+  color: #353535;
+  opacity: 0.6;
+}
+
+#root .recipe-header .search-bar input::placeholder {
+  color: #353535;
+  opacity: 0.6;
+}
+
+#root .recipe-header .search-bar input[type="text"] {
+  font-family: "Roboto", sans-serif;
+  color: #353535;
+  opacity: 1;
+}
+
+#root .recipe-header .search-bar input:focus {
+  background: rgba(124, 179, 229, 0.5);
+}
+
+#root .recipe-header .search-bar .search-btn {
+  font-family: "Roboto", sans-serif;
+  width: 150px;
+  height: 45px;
+  border: none;
+  outline: none;
+  background: rgba(124, 179, 229, 0.7);
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: background 400ms;
+  transition: background 400ms;
+}
+
+#root .recipe-header .search-bar .search-btn:hover {
+  background: #7cb3e5;
+}
+
+#root .recipe-items {
+  width: 80%;
+  margin: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#root .recipe-items .grid-items {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 450px 450px;
+      grid-template-columns: 450px 450px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#root .recipe-items .add-recipe-btn {
+  cursor: pointer;
+  width: 250px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background: #7cb3e5;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 9px;
+  color: #fff;
+  margin: 3rem auto;
+  -webkit-transition: background 400ms;
+  transition: background 400ms;
+  display: block;
+}
+
+#root .recipe-items .add-recipe-btn:hover {
+  background: #618fb8;
+}
+
+#root .recipe-edit {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-grid-columns: 400px 500px;
+      grid-template-columns: 400px 500px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: static;
+}
+
+#root .recipe-edit .original-section .item {
+  margin-bottom: 0;
+}
+
+#root .recipe-edit .original-section .item .buttons {
+  display: none;
+}
+
+#root .recipe-edit .edit-section {
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  border: 1px solid #7cb3e5;
+  border-radius: 9px;
+  padding: 2rem 2rem 0 2rem;
+  background: #fff;
+}
+
+#root .recipe-edit .edit-section .main-close-btn {
+  position: absolute;
+  top: 4%;
+  right: 10%;
+  background: #ea4444;
+  width: 40px;
+  height: 40px;
+  -webkit-transform: translate(-10%, -4%);
+          transform: translate(-10%, -4%);
+  -webkit-transition: -webkit-box-shadow 400ms;
+  transition: -webkit-box-shadow 400ms;
+  transition: box-shadow 400ms;
+  transition: box-shadow 400ms, -webkit-box-shadow 400ms;
+}
+
+#root .recipe-edit .edit-section .main-close-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+#root .recipe-edit .edit-section .main-close-btn:hover {
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#root .recipe-edit .edit-section .primary-edit {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+#root .recipe-edit .edit-section .primary-edit .name,
+#root .recipe-edit .edit-section .primary-edit .cookTime,
+#root .recipe-edit .edit-section .primary-edit .instructions {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  color: #353535;
+}
+
+#root .recipe-edit .edit-section .primary-edit .name .edit-item-title,
+#root .recipe-edit .edit-section .primary-edit .cookTime .edit-item-title,
+#root .recipe-edit .edit-section .primary-edit .instructions .edit-item-title {
+  font-weight: 700;
+}
+
+#root .recipe-edit .edit-section .primary-edit .name input,
+#root .recipe-edit .edit-section .primary-edit .name textarea,
+#root .recipe-edit .edit-section .primary-edit .cookTime input,
+#root .recipe-edit .edit-section .primary-edit .cookTime textarea,
+#root .recipe-edit .edit-section .primary-edit .instructions input,
+#root .recipe-edit .edit-section .primary-edit .instructions textarea {
+  width: 250px;
+  border: none;
+  outline: none;
+  background: rgba(124, 179, 229, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: solid rgba(124, 179, 229, 0.4) 1px;
+}
+
+#root .recipe-edit .edit-section .primary-edit .name input[type="text"],
+#root .recipe-edit .edit-section .primary-edit .name textarea[type="text"],
+#root .recipe-edit .edit-section .primary-edit .cookTime input[type="text"],
+#root .recipe-edit .edit-section .primary-edit .cookTime textarea[type="text"],
+#root .recipe-edit .edit-section .primary-edit .instructions input[type="text"],
+#root .recipe-edit .edit-section .primary-edit .instructions textarea[type="text"] {
+  font-family: "Roboto", sans-serif;
+  color: #353535;
+}
+
+#root .recipe-edit .edit-section .primary-edit .instructions textarea {
+  font-family: "Roboto", sans-serif;
+  color: #353535;
+  resize: none;
+  height: 250px;
+  padding: 10px !important;
+}
+
+#root .recipe-edit .edit-section .ingredients .edit-item-title {
+  font-weight: 700;
+}
+
+#root .recipe-edit .edit-section .ingredients .grid-ingredients {
+  margin-top: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+#root .recipe-edit .edit-section .ingredients .grid-ingredients .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#root .recipe-edit .edit-section .ingredients .grid-ingredients .grid .ingredient-edit-name input,
+#root .recipe-edit .edit-section .ingredients .grid-ingredients .grid .ingredient-edit-amount input {
+  height: 26px;
+  border: solid rgba(124, 179, 229, 0.4) 1px;
+  outline: none;
+  background: rgba(124, 179, 229, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+#root .recipe-edit .edit-section .ingredients .grid-ingredients .grid .ingredient-edit-name input[type="text"],
+#root .recipe-edit .edit-section .ingredients .grid-ingredients .grid .ingredient-edit-amount input[type="text"] {
+  font-family: "Roboto", sans-serif;
+  color: #353535;
+}
+
+#root .recipe-edit .edit-section .ingredients .grid-ingredients .grid .ingredient-edit-delete-btn {
+  width: 25px;
+  height: 25px;
+  background: #ea4444;
+}
+
+#root .recipe-edit .edit-section .ingredients .grid-ingredients .grid .ingredient-edit-delete-btn .ingredient-delete-btn {
+  width: 15px;
+  height: 3px;
+  background: #fff;
+  border-radius: 9px;
+}
+
+#root .recipe-edit .edit-section .ingredients .add-ingredient-btn {
+  cursor: pointer;
+  width: 150px;
+  height: 35px;
+  border: none;
+  outline: none;
+  background: #7cb3e5;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  border-radius: 9px;
+  color: #fff;
+  margin: 2rem auto;
+  -webkit-transition: background 400ms;
+  transition: background 400ms;
+  display: block;
+}
+
+#root .recipe-edit .edit-section .ingredients .add-ingredient-btn:hover {
+  background: #618fb8;
+}
+
+#root .active {
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(124, 179, 229, 0.1);
+  padding-top: 10vh;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  overflow: hidden;
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  #root
+.recipe-edit
+.edit-section
+.ingredients
+.grid-ingredients
+.grid
+.ingredient-edit-delete-btn {
+    width: 12px;
+    height: 2px;
+  }
+}
+
+@media (min-width: 990px) and (max-width: 1024px) {
+  #root .recipe-items {
+    width: 85%;
+  }
+  #root .recipe-items .grid-items {
+    grid-column-gap: 3rem;
+    -ms-grid-columns: 400px 400px;
+        grid-template-columns: 400px 400px;
+  }
+  #root .recipe-items .grid-items .item {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  #root .recipe-header {
+    width: 80%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 50px auto;
+  }
+  #root .recipe-header .search-bar {
+    width: 70%;
+    margin-top: 10px;
+  }
+  #root .recipe-header .search-bar input {
+    width: 100%;
+    height: 40px;
+  }
+  #root .recipe-items {
+    width: 85%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #root .recipe-items .grid-items {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  #root .recipe-items .grid-items .item {
+    max-width: 400px;
+  }
+  #root .recipe-items .add-recipe-btn {
+    margin: 0 auto 2rem auto;
+  }
+  #root .active {
+    -ms-grid-columns: 400px;
+        grid-template-columns: 400px;
+  }
+  #root .active .original-section {
+    display: none;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-grid-row: 2;
+    grid-row: 2;
+  }
+  #root .active .original-section .item {
+    margin: 0 auto;
+    max-width: 400px;
+  }
+  #root .active .edit-section {
+    width: 90%;
+    margin: 0 auto;
+  }
+  #root .active .edit-section .primary-edit .name input,
+  #root .active .edit-section .primary-edit .cookTime input {
+    width: auto;
+  }
+  #root .active .edit-section .primary-edit .instructions {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  #root .active .edit-section .primary-edit .instructions textarea {
+    margin-top: 10px;
+    width: 100%;
+  }
+  #root .active .edit-section .ingredients .grid-ingredients .grid {
+    padding-bottom: 20px;
+    position: relative;
+        grid-template-areas: "name ." "amount  delete-btn";
+  }
+  #root .active .edit-section .ingredients .grid-ingredients .grid .ingredient-edit-name {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: name;
+  }
+  #root .active .edit-section .ingredients .grid-ingredients .grid .ingredient-edit-amount {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: amount;
+  }
+  #root .active .edit-section .ingredients .grid-ingredients .grid .ingredient-edit-delete-btn {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: delete-btn;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    margin-top: -5px;
+  }
+  #root .active .edit-section .ingredients .grid-ingredients .grid::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    border-radius: 9px;
+    background: #c4c4c4;
+  }
+  #root .active .edit-section .main-close-btn {
+    width: 30px;
+    height: 30px;
+  }
+  #root .active .edit-section .main-close-btn img {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1190px) {
+  #root .recipe-items .grid-items {
+    -ms-grid-columns: 400px 400px;
+        grid-template-columns: 400px 400px;
+  }
+  #root .recipe-items .grid-items .item {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 990px) {
+  #root .recipe-header {
+    width: 80%;
+  }
+  #root .recipe-items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #root .recipe-items .grid-items {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  #root .recipe-items .grid-items .item {
+    max-width: 450px;
+  }
+  #root .active {
+    -ms-grid-columns: 500px;
+        grid-template-columns: 500px;
+  }
+  #root .active .original-section {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-grid-row: 2;
+    grid-row: 2;
+  }
+  #root .active .original-section .item {
+    margin: 0 auto;
+  }
+  #root .active .edit-section {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (min-width: 1700px) {
+  #root .recipe-items .grid-items {
+    -ms-grid-columns: (450px)[auto-fill];
+        grid-template-columns: repeat(auto-fill, 450px);
+    grid-column-gap: 50px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
