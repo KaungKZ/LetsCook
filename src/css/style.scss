@@ -433,7 +433,7 @@ body {
         width: 100%;
         justify-items: center;
         .item {
-          max-width: 400px;
+          width: 400px;
         }
       }
       .add-recipe-btn {
@@ -539,10 +539,9 @@ body {
       .grid-items {
         grid-template-columns: 1fr;
         width: 100%;
-        justify-items: center;
 
         .item {
-          max-width: 450px;
+          width: 450px;
         }
       }
     }
