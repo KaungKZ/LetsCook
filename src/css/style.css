@@ -504,7 +504,7 @@ body {
     height: 40px;
   }
   #root .recipe-items {
-    width: 85%;
+    width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -520,7 +520,7 @@ body {
     justify-items: center;
   }
   #root .recipe-items .grid-items .item {
-    width: 400px;
+    width: 350px;
   }
   #root .recipe-items .add-recipe-btn {
     margin: 0 auto 2rem auto;
@@ -629,6 +629,7 @@ body {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     width: 100%;
+    justify-items: center;
   }
   #root .recipe-items .grid-items .item {
     width: 450px;
@@ -649,6 +650,12 @@ body {
   }
   #root .active .edit-section {
     margin-bottom: 3rem;
+  }
+}
+
+@media (min-width: 482px) and (max-width: 563px) {
+  #root .recipe-items .grid-items .item {
+    width: 400px;
   }
 }
 
